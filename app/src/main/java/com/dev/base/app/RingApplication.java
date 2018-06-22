@@ -1,30 +1,25 @@
 package com.dev.base.app;
 
 import android.app.Application;
-import android.graphics.Typeface;
 
 import com.dev.base.R;
 import com.dev.base.app.constant.UrlConstants;
 import com.dev.base.mvp.model.bus.RxBusManager;
-import com.dev.base.mvp.model.db.nativedao.NativeDBManager;
-import com.dev.base.mvp.model.imageload.FrescoManager;
 import com.ljy.devring.DevRing;
 import com.ljy.devring.util.FileUtil;
-
-import java.lang.reflect.Field;
 
 /**
  * author:  ljy
  * date:    2018/3/5
  * description: 做全局初始化操作
- *
+ * <p>
  * DevRing库的具体使用以及各模块介绍，可到我博客中查阅相关文章 <a>https://www.jianshu.com/nb/18164561</a>
  * 使用步骤分四步，务必按顺序执行!!!
  * 1.初始化  DevRing.init(this)
  * 2.根据你的需求进行相关模块的全局配置  DevRing.configureXXX()
  * 3.开始构建  DevRing.create()
  * 4.在需要使用的地方通过DevRing.xxxManager()得到某管理者，然后进行相关操作。
- *
+ * <p>
  * 1,2,3步在Application的onCreate中执行
  */
 
@@ -86,7 +81,7 @@ public class RingApplication extends Application {
 
         //数据库模块（可替换，demo演示了如何使用原生数据库替换默认的GreenDao）
 //        DevRing.configureDB(new GreenDBManager());//传入GreenDao数据库的管理者
-        DevRing.configureDB(new NativeDBManager());//传入原生数据库的管理者
+        //DevRing.configureDB(new NativeDBManager());//传入原生数据库的管理者
 
 
         //缓存模块
