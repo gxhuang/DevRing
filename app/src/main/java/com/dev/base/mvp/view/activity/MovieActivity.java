@@ -103,6 +103,7 @@ public class MovieActivity extends BaseActivity {
         mTlMovie.addTab(mTlMovie.newTab().setText(mStrPlaying), mCurrentIndex == 0 ? true : false);
         mTlMovie.addTab(mTlMovie.newTab().setText(mStrComming), mCurrentIndex == 1 ? true : false);
 
+
         //侧滑抽屉里的圆形头像，比较特殊，无法通过butterknife初始化
         mIvAvatar = mNavigationView.getHeaderView(0).findViewById(R.id.iv_avatar);
         DevRing.imageManager().loadRes(R.mipmap.ic_logo, mIvAvatar, new LoadOption().setIsCircle(true));

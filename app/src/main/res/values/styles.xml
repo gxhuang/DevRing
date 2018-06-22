@@ -17,7 +17,12 @@
         <item name="actionMenuTextColor">@color/white</item>
         <item name="android:windowAnimationStyle">@style/pageInOut</item>
     </style>
-
+    <style name="AppFullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
     <!-- 页面跳转间的过渡动画 -->
     <style name="pageInOut">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_from_right</item>

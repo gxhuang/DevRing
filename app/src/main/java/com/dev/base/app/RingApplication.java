@@ -1,6 +1,7 @@
 package com.dev.base.app;
 
 import android.app.Application;
+import android.graphics.Typeface;
 
 import com.dev.base.R;
 import com.dev.base.app.constant.UrlConstants;
@@ -9,6 +10,8 @@ import com.dev.base.mvp.model.db.nativedao.NativeDBManager;
 import com.dev.base.mvp.model.imageload.FrescoManager;
 import com.ljy.devring.DevRing;
 import com.ljy.devring.util.FileUtil;
+
+import java.lang.reflect.Field;
 
 /**
  * author:  ljy
@@ -30,7 +33,6 @@ public class RingApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
         //内存泄露检测
 //        if (LeakCanary.isInAnalyzerProcess(this)) return;
 //        LeakCanary.install(this);
@@ -63,7 +65,7 @@ public class RingApplication extends Application {
 
         //图片加载模块（可替换，demo演示了如何使用Fresco替换默认的Glide）
 //        DevRing.configureImage()//配置默认的Glide
-        DevRing.configureImage(new FrescoManager()) //传入Fresco管理者进行替换，注意，替换为Fresco后，相关的ImageView需换成SimpleDraweeView
+        DevRing.configureImage() //传入Fresco管理者进行替换，注意，替换为Fresco后，相关的ImageView需换成SimpleDraweeView
                 .setLoadingResId(R.mipmap.ic_image_load)//设置“加载中”状态时显示的图片
                 .setErrorResId(R.mipmap.ic_image_load)//设置“加载失败”状态时显示的图片
                 .setIsShowTransition(true)//设置是否开启状态切换时的过渡动画，默认false

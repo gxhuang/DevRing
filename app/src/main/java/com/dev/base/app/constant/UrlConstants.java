@@ -14,4 +14,6 @@ public interface UrlConstants {
 
     String UPLOAD = "http://upload.qiniu.com/";
     String DOWNLOAD = "http://ucan.25pp.com/Wandoujia_web_seo_baidu_homepage.apk";
+
+
 }
